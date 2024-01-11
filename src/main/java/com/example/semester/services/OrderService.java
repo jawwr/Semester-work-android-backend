@@ -25,7 +25,7 @@ public class OrderService {
         int between = (int) Duration.between(order.getOrderTime(), LocalDateTime.now()).toMinutes() / 2;
         OrderStatus status;
         if (between < 5) {
-            status = OrderStatus.values()[between % 4];
+            status = OrderStatus.values()[between % 5];
         } else {
             status = OrderStatus.DONE;
         }
